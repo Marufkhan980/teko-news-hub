@@ -36,11 +36,12 @@ const Header = () => {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 px-3 sm:px-6 pt-3">
+    <header className="sticky top-0 z-50 px-3 sm:px-6 pt-3 pb-3
+    bg-gradient-to-r from-blue-100/80 via-indigo-100/80 to-cyan-100/80">
       <div className="max-w-7xl mx-auto">
 
-        <div className="relative bg-white/75 backdrop-blur-2xl
-          border border-white/80 shadow-lg shadow-slate-900/5
+        <div className="relative bg-white/55 backdrop-blur-2xl
+          border border-white/70 shadow-xl shadow-blue-900/10
           rounded-2xl">
 
           <div className="px-4 sm:px-6 py-3.5 flex
