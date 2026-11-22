@@ -1,14 +1,11 @@
 
-import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import useNewsStore from '../store/newsStore';
 import {
   FaArrowRight,
   FaSearch,
   FaFire,
   FaClock,
   FaNewspaper,
-  FaArrowUpRightFromSquare
+  FaExternalLinkAlt
 } from 'react-icons/fa';
 
 const categories = [
