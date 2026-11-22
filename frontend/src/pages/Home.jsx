@@ -11,6 +11,35 @@ import {
   FaExternalLinkAlt
 } from 'react-icons/fa';
 
+
+const NewsImage = ({ src, title, className }) => {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <>
+      {src && !imageError ? (
+        <img
+          src={src}
+          alt={title || 'News'}
+          className={className}
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <div className="w-full h-full min-h-44 flex flex-col
+          items-center justify-center bg-gradient-to-br
+          from-blue-100 via-indigo-100 to-slate-200
+          text-blue-500">
+          <FaNewspaper className="text-4xl mb-2" />
+          <span className="text-sm font-semibold">
+            Image Unavailable
+          </span>
+        </div>
+      )}
+    </>
+  );
+};
+
+
 const categories = [
   'Politics',
   'Sports',
@@ -263,13 +292,13 @@ const Home = () => {
                   to={`/news/${news._id}`}
                   className="block relative overflow-hidden"
                 >
-                  <img
-                    src={news.image || 'https://placehold.co/600x400?text=News'}
-                    alt={news.title}
+                  <NewsImage
+                    src={news.image}
+                    title={news.title}
                     className="w-full h-56 object-cover
                       group-hover:scale-105
                       transition-transform duration-500"
-                  />
+                 />
 
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1.5
@@ -390,12 +419,12 @@ const Home = () => {
                 >
 
                   <div className="overflow-hidden">
-                    <img
-                      src={news.image || 'https://placehold.co/400x250?text=News'}
-                      alt={news.title}
+                    <NewsImage
+                      src={news.image}
+                      title={news.title}
                       className="w-full h-44 object-cover
-                        group-hover:scale-105
-                        transition-transform duration-500"
+                         group-hover:scale-105
+                         transition-transform duration-500"
                     />
                   </div>
 
