@@ -286,7 +286,7 @@ const Home = () => {
                     justify-center text-blue-600
                     opacity-0 group-hover:opacity-100
                     transition">
-                    <FaArrowUpRightFromSquare />
+                    <FaExternalLinkAlt />
                   </div>
                 </Link>
 
